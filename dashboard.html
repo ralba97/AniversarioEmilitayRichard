@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body class="dashboard">
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></div>
+    <!-- Botón de Hamburguesa -->
+    <button id="sidebarToggle" class="hamburger-button">
+        <i class="ri-menu-4-line"></i>
+    </button>
+    <!-- Botón de cerrar Sesion -->
+    <button id="logoutButton" title="Cerra Sesion">
+        <i class="ri-logout-circle-line"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h1 class="titulo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff"
+                fill="none">
+                <path
+                    d="M5.18007 15.2964C3.92249 16.0335 0.625213 17.5386 2.63348 19.422C3.6145 20.342 4.7071 21 6.08077 21H13.9192C15.2929 21 16.3855 20.342 17.3665 19.422C19.3748 17.5386 16.0775 16.0335 14.8199 15.2964C11.8709 13.5679 8.12906 13.5679 5.18007 15.2964Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M14 7C14 9.20914 12.2091 11 10 11C7.79086 11 6 9.20914 6 7C6 4.79086 7.79086 3 10 3C12.2091 3 14 4.79086 14 7Z"
+                    stroke="currentColor" stroke-width="1.5" />
+                <path
+                    d="M16.7612 3.27615C17.5657 2.81923 18.2679 3.00336 18.6897 3.29667C18.8626 3.41693 18.9491 3.47706 19 3.47706C19.0509 3.47706 19.1374 3.41693 19.3103 3.29667C19.7321 3.00336 20.4343 2.81923 21.2388 3.27615C22.2946 3.87582 22.5335 5.85413 20.0981 7.52315C19.6343 7.84105 19.4024 8 19 8C18.5976 8 18.3657 7.84105 17.9019 7.52315C15.4665 5.85413 15.7054 3.87582 16.7612 3.27615Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg> Feliz Aniversario
+        </h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="#inicio" class="active">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#ffffff" fill="none">
+                            <path
+                                d="M15.0002 17C14.2007 17.6224 13.1504 18 12.0002 18C10.8499 18 9.79971 17.6224 9.00018 17"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                            <path
+                                d="M2.35157 13.2135C1.99855 10.9162 1.82204 9.76763 2.25635 8.74938C2.69065 7.73112 3.65421 7.03443 5.58132 5.64106L7.02117 4.6C9.41847 2.86667 10.6171 2 12.0002 2C13.3832 2 14.5819 2.86667 16.9792 4.6L18.419 5.64106C20.3462 7.03443 21.3097 7.73112 21.744 8.74938C22.1783 9.76763 22.0018 10.9162 21.6488 13.2135L21.3478 15.1724C20.8473 18.4289 20.5971 20.0572 19.4292 21.0286C18.2613 22 16.5538 22 13.139 22H10.8614C7.44652 22 5.73909 22 4.57118 21.0286C3.40327 20.0572 3.15305 18.4289 2.65261 15.1724L2.35157 13.2135Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg> Inicio</a>
+                </li>
+
+                <li><a href="#recuerdos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#ffffff" fill="none">
+                            <path
+                                d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg> Nuestros Recuerdos</a>
+                </li>
+                <li><a href="#sorpresas">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#ffffff" fill="none">
+                            <path
+                                d="M4 11V15C4 18.2998 4 19.9497 5.02513 20.9749C6.05025 22 7.70017 22 11 22H13C16.2998 22 17.9497 22 18.9749 20.9749C20 19.9497 20 18.2998 20 15V11"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M3 9C3 8.25231 3 7.87846 3.20096 7.6C3.33261 7.41758 3.52197 7.26609 3.75 7.16077C4.09808 7 4.56538 7 5.5 7H18.5C19.4346 7 19.9019 7 20.25 7.16077C20.478 7.26609 20.6674 7.41758 20.799 7.6C21 7.87846 21 8.25231 21 9C21 9.74769 21 10.1215 20.799 10.4C20.6674 10.5824 20.478 10.7339 20.25 10.8392C19.9019 11 19.4346 11 18.5 11H5.5C4.56538 11 4.09808 11 3.75 10.8392C3.52197 10.7339 3.33261 10.5824 3.20096 10.4C3 10.1215 3 9.74769 3 9Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path
+                                d="M6 3.78571C6 2.79949 6.79949 2 7.78571 2H8.14286C10.2731 2 12 3.7269 12 5.85714V7H9.21429C7.43908 7 6 5.56091 6 3.78571Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path
+                                d="M18 3.78571C18 2.79949 17.2005 2 16.2143 2H15.8571C13.7269 2 12 3.7269 12 5.85714V7H14.7857C16.5609 7 18 5.56091 18 3.78571Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M12 11L12 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg> Nuestro Primer Capítulo de Amor</a>
+                </li>
+
+                <li><a href="#musicas">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#ffffff" fill="none">
+                            <path
+                                d="M7 9.5C7 10.8807 5.88071 12 4.5 12C3.11929 12 2 10.8807 2 9.5C2 8.11929 3.11929 7 4.5 7C5.88071 7 7 8.11929 7 9.5ZM7 9.5V2C7.33333 2.5 7.6 4.6 10 5"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="10.5" cy="19.5" r="2.5" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="20" cy="18" r="2" stroke="currentColor" stroke-width="1.5" />
+                            <path
+                                d="M13 19.5L13 11C13 10.09 13 9.63502 13.2466 9.35248C13.4932 9.06993 13.9938 9.00163 14.9949 8.86504C18.0085 8.45385 20.2013 7.19797 21.3696 6.42937C21.6498 6.24509 21.7898 6.15295 21.8949 6.20961C22 6.26627 22 6.43179 22 6.76283V17.9259"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M13 13C17.8 13 21 10.6667 22 10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Nuestras Musicas</a>
+                </li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main>
+        <button id="toggleDarkMode" class="floating-button" title="Modo">
+            <i class="ri-sun-line"></i>
+        </button>
+
+        <section id="inicio" class="content-section active">
+            <br>
+            <h2>¡Bienvenida a nuestra historia, mi ternurita 💖!</h2>
+            <br>
+            <h2>¿Lista para hacer un recorrido por nuestro Añito de historia de amor? 😍</h2>
+            <br>
+            <br>
+            <h2>Donde todo empezó… capturado en destellos de ternura y amor. 🔆:</h2>
+
+            <!-- Galería de Fotos -->
+            <div class="gallery">
+                <!-- Foto 1 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec1.jpg" alt="Descripción de la foto 1">
+                    <div class="gallery-description">
+                        <p>Nuestro primer día juntos ❤️</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec2.jpg" alt="Descripción de la foto 2">
+                    <div class="gallery-description">
+                        <p>Un dia muy especial 💜</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec3.jpg" alt="Descripción de la foto 3">
+                    <div class="gallery-description">
+                        <p>Nuestra Promesa 💞</p>
+                    </div>
+                </div>
+                <!-- Foto 4 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec4.jpg" alt="Descripción de la foto 4">
+                    <div class="gallery-description">
+                        <p>Un paseo inolvidable 🔆</p>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec5.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Celebrando nuestro aniversario 🎉</p>
+                    </div>
+                </div>
+
+                <!-- Foto 6-->
+                <div class="gallery-item">
+                    <img src="assets\img\rec6.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Cosita Hermosa💜</p>
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec7.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Besito con mucho amor 😘</p>
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec8.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Unita para la sed 🤤</p>
+                    </div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec9.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>A minutos de despedirnos 😢</p>
+                    </div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec10.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Simplemente Bonitos 🥰</p>
+                    </div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec14.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Juntos de la mano 💖 </p>
+                    </div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec11.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Admirando a mi mundo 💜</p>
+                    </div>
+                </div>  
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec12.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Enamorado de sus lindos ojitos 👀</p>
+                    </div>
+                </div>
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="assets\img\rec13.jpg" alt="Descripción de la foto 5">
+                    <div class="gallery-description">
+                        <p>Camina con mucha Fé 🙇</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recuerdos" class="content-section">
+            <h2>💫 Nuestra Línea del Tiempo — Volvamos a vivirlo, Mi Amor… 💍</h2>
+            <p>💑Porque hay historias que no se cuentan… se sienten. Y la nuestra, 
+                mi vida, está hecha de cada mirada, cada risa y cada momento compartido. ✨</p>
+            <p>Hoy recorreremos ese caminito que empezamos con nervios, risitas y muchos Amor, y 
+            que con el tiempo se llenó de ternura, bromas internas y un amor tan bonito como usted💜.</p>
+             <p>Así que, tome mi mano otra vez... 🤝💑</p>
+             <p>🖤Vamos a revivir cada paso, cada lugar y cada instante que hizo que este año con usted fuera el más bonito de todos💜.</p>
+            <!-- Línea de Tiempo -->
+            <div class="timeline">
+                <div class="timeline-event">
+                    <h3>Nuestras primeras citas 💑✨</h3>
+                    <img src="assets\img\his1.jpg" alt="Primera cita">
+                    <p>Donde todo comenzó… entre nervios, sonrisas y miradas que decían más que mil palabras 🥺💘. Desde
+                        esos primeros momentos, supe que algo especial estaba naciendo entre nosotros 💞. Cada recuerdo
+                        de esas citas me recuerda por qué me enamoré de usted 🥰🌟.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>El comienzo de nuestro “para siempre” 💍❤️ </h3>
+                    <img src="assets/img/rec3.jpg" alt="para siempre">
+                    <p>Ese día no solo le pedí que fuera mi novia, mi amor… también le entregué un pedacito de mi
+                        corazón envuelto en un anillo de promesa 💍❤️. Promesa de respeto, de lealtad, de lucha y amor
+                        sincero. Desde ese momento, empezó un capítulo hermoso, uno donde ya no éramos “usted y yo”,
+                        sino un “nosotros” que vale más que mil palabras ✨🤝.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>Una noche diferente 🎶💫 </h3>
+                    <img src="assets\img\his2.jpg" alt="Una noche diferente">
+                    <p>No logramos entrar al concierto, pero eso no importó 🥺❤️. Lo más bonito fue compartir ese
+                        momento a su lado, reírnos, abrazarnos y disfrutar simplemente de estar juntos 🥰✨. Porque
+                        cuando estoy con usted, cualquier lugar se vuelve especial 💞🌙.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>Una noche de baile inolvidable 💃🕺❤️ </h3>
+                    <img src="assets\img\his3.jpg" alt="Una noche de baile inolvidable">
+                    <p>Una noche de baile, risas y miradas que decían todo sin hablar ✨💖. A pesar de que me decía que
+                        le dolían los pies de tanto bailar 😅👣, disfrutamos cada momento juntos 🥰🎶. Compartimos
+                        instantes únicos, de esos que se guardan en el alma para siempre 💫💕. Porque con usted, todo se
+                        vuelve mágico ❤️.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>Rutas imperfectas, momentos perfectos ✨🛤️ </h3>
+                    <img src="assets\img\his4.jpg" alt="Rutas imperfectas">
+                    <p>Caminamos por senderos llenos de aventuras, caídas y risas que nos unieron aún más 😄💞. Nos
+                        tropezamos, nos levantamos y seguimos… siempre de la mano 🤝❤️. Porque no importa el camino,
+                        mientras sea con usted, cada paso vale la pena 🌄✨.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>Nuestro primer viaje juntos 🌊☀️💑 </h3>
+                    <img src="assets\img\his5.jpg" alt="uestro primer viaje juntos">
+                    <p>Un paseo a la playa que marcó el inicio de muchas aventuras juntos 🏖️💕. Sentir la brisa,
+                        caminar por la orilla y compartir cada risa a su lado fue simplemente perfecto 😍🌅. No fue solo
+                        un viaje, fue un recuerdo eterno que guardo en el corazón 💫.</p>
+                </div>
+                <div class="timeline-event">
+                    <h3>Una de nuestras mil millones de videollamadas 📱❤️ </h3>
+                    <img src="assets\img\his6.jpg" alt="Llamadas">
+                    <p>Aunque la distancia a veces nos separa 🌍💭, esas videollamadas nos han mantenido más cerca que
+                        nunca 💞. Ver su carita, escuchar su voz y sentir su amor a través de una pantalla siempre me
+                        alegra el alma 🥰📲. Porque no importa dónde estemos… lo nuestro siempre encuentra la forma de
+                        sentirse cerquita 💞✨.</p>
+                </div>
+            </div>
+            <p>Podría seguir contando cada uno de nuestros recuerdos, cada risa, cada mirada, cada abrazo que nos marcó
+                💞… pero la lista sería interminable ✨📖. Porque lo que hemos vivido no cabe en palabras, solo usted y
+                yo sabemos lo profundo, lo bonito y lo real que ha sido todo esto 💘💑. Gracias por cada instante, mi
+                amor… por este viaje tan hermoso que estamos construyendo juntos, paso a paso.🚶‍♂️🚶‍♀️💫.</p>
+            <P>Le Amo con todo mi corazón..❤️</P>
+        </section>
+
+        <section id="mensajes" class="content-section">
+            <h2> Instantes Escritos con Amor</h2>
+            <br>
+            <br>
+            <div class="mensaje-container">
+                <p id="mensaje-texto">hoalaa</p>
+                <button id="nuevo-mensaje-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff"
+                        fill="none">
+                        <path
+                            d="M12.5 2.01175C12.3344 2.00395 12.1677 2 12 2C6.47778 2 2 6.28357 2 11.5667C2 14.1051 3.03333 16.4115 4.71889 18.1231C5.09 18.5 5.33778 19.0148 5.23778 19.5448C5.07275 20.4112 4.69874 21.2194 4.15111 21.893C5.59195 22.161 7.09014 21.9197 8.37499 21.2364C8.82918 20.9949 9.05627 20.8741 9.21653 20.8496C9.37678 20.8251 9.60633 20.8682 10.0654 20.9545C10.7032 21.0742 11.3507 21.1343 12 21.1334C17.5222 21.1334 22 16.8499 22 11.5667C22 11.3765 21.9942 11.1875 21.9827 11"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15 5.5H22M18.5 2L18.5 9" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9955 12H12.0045M15.991 12H16M8 12H8.00897" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> Nuevo Mensaje</button>
+            </div>
+        </section>
+
+        <section id="fotos" class="content-section">
+            <br>
+            <h2>Nuestras Fotos</h2>
+            <br>
+            <br>
+            <p>Exploremos nuestros momentos especiales capturados en imágenes.</p>
+            <br>
+            <br>
+
+            <div class="collage-container">
+                <div class="collage-item">
+                    <img src="assets\img\fot1.jpg" alt="Descripción de la foto 1">
+                </div>
+                <div class="collage-item">
+                    <img src="assets\img\fot2.jpg" alt="Descripción de la foto 2">
+                </div>
+                <div class="collage-item">
+                    <img src="assets\img\fot3.jpg" alt="Descripción de la foto 3">
+                </div>
+                <div class="collage-item">
+                    <img src="assets\img\fot4.jpg" alt="Descripción de la foto 4">
+                </div>
+                <div class="collage-item">
+                    <img src="assets\img\fot5.jpg" alt="Descripción de la foto 4">
+                </div>
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </section>
+
+        <section id="musicas" class="content-section">
+            <h2>Nuestras Músicas</h2>
+            <p>Nuestros mejores momentos a través de las músicas.</p>
+
+            <div class="music-container">
+                <div class="music-card">
+                    <div class="music-image">
+                        <img src="assets\img\mus1.jpg" alt="Portada del álbum">
+                    </div>
+                    <div class="music-info">
+                        <h3>🎵"Por Eso Te Amo" – Río Roma🎵</h3>
+                        <p>🎶Un año lleno de momentos, de aprendizajes, de locuras y risas.
+                            Esta canción no es solo una melodía bonita… es nuestro reflejo, 
+                            porque en cada letra está eso que no siempre se dice con palabras, 
+                            pero sí con miradas, con detalles y con paciencia.Un año después, 
+                            sigo eligiéndola como el primer día, porque usted es esa canción que
+                            nunca me canso de escuchar… mi ternura, mi risa, mi caos bonito.
+                            💜 Y por eso… por todo eso… Le amo.<br><br><br><br><br><br></p>
+                    </div>
+                    <div class="music-controls">
+                        <audio controls>
+                            <source src="assets/music/Río Roma - Por Eso Te Amo.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <div class="music-image">
+                        <img src="assets\img\mus2.jpg" alt="Portada del álbum">
+                    </div>
+                    <div class="music-info">
+                        <h3>💫La Cosa Más Bella – Eros Ramazzotti💫</h3>
+                        <p>💖"La cosa más bella que hay, es usted." Esta canción dice lo que muchas 
+                            veces me cuesta expresar porque sí, usted es eso bonito que llegó a 
+                            desordenar mi mundo tan serio, a llenarlo de luz, de ternura. Haciendo que incluso mis días más grises 
+                            tengan un rayito de sol. Porque en este año, entre bromas, abrazos 
+                            me di cuenta de que no hay nada más lindo que tenerla a usted.✨La cosa más 
+                            bella no es solo la canción es usted, mi cosita más bonita.<br><br><br><br><br></p>
+                    </div>
+                    <div class="music-controls">
+                        <audio controls>
+                            <source src="assets\music\Eros Ramazzotti - La Cosa Mas Bella.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <div class="music-image">
+                        <img src="assets\img\mus3.jpg" alt="Portada del álbum">
+                    </div>
+                    <div class="music-info">
+                        <h3>✨Amor Infinito – Pablo Heredia✨</h3>
+                        <p>💞"Usted y yo, un amor que no tiene final." Esta canción parece escrita para nosotros… porque 
+                        aunque seamos tan distintos usted tan risueña y dulce y yo tan serio y amargado 😅, hemos aprendido 
+                        a caminar juntos, a querernos con nuestras rarezas y a cuidarnos con un amor que no se acaba.❤️
+                        Este año ha sido un viaje lleno de momentos mágicos, bobadas, bromas internas y abrazos infinitos.
+                        Y aunque a veces no lo diga con muchas palabras, usted es mi amor infinito, esa persona que no imaginaba 
+                        necesitar, pero que hoy no puedo imaginar perder.<br><br></p>
+                    </div>
+                    <div class="music-controls">
+                        <audio controls>
+                            <source src="assets\music\Pablo Heredia y Flavia Laos - Amor Infinito.mp3"
+                                type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <div class="music-image">
+                        <img src="assets\img\fot7.jpg" alt="Portada del álbum">
+                    </div>
+                    <div class="music-info">
+                        <h3>🕰️A un minuto de ti – Pablo Heredia✨</h3>
+                        <p>💞"Siempre estaré a un minuto de ti... Porque no importa si estamos lejos o si nos ganan 
+                            los días con sus líos, mi corazón siempre está cerca del suyo.A veces no lo digo mucho ya 
+                            sabe cómo soy, pero usted lo sabe: estoy ahí, en cada mensaje inesperado, en cada tonteria mia,
+                            en cada canción que nos suena a recuerdos. Este año ha sido así, a minutos, a abrazos, a tonterías 
+                            que se volvieron momentos inolvidables. Y cada minuto con usted vale más que cualquier otra cosa.💜"<br><br><br><br><br></p>
+                    </div>
+                    <div class="music-controls">
+                        <audio controls>
+                            <source src="assets\music\A un minuto de ti · Mikel Erentxun.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sorpresas" class="content-section">
+            <h2>"Nuestro primer capítulo de muchos más" 📖💑</h2>
+            <br>
+
+            <!-- Contenedor de la sorpresa -->
+            <div class="sorpresa-container">
+                <div id="sorpresa-content" class="sorpresa-content-car">
+                    <p>Mi amorcito hermosa, mi vida entera.... 💖🌹</p>
+                    <br>
+                    <p>Tengo tantas emociones encontradas…
+                        Que no se por donde empezar.</p>
+                    <br>
+                    <p> Tal vez porque lo que siento por usted es tan inmenso, tan profundo, tan sincero… que las
+                        palabras se me quedan cortas.💬😘</p>
+                    <br>
+                    <p>Hoy celebramos un año juntos, y no puedo evitar emocionarme al pensar en todo lo que hemos
+                        vivido, en todo lo que hemos
+                        superado, y en lo profundamente agradecido que me siento por tenerla a mi lado 💖.</p>
+                    <br>
+                    <p>Doce meses… 365 días… 📆 y cada uno de ellos ha sido un capítulo único de esta historia que hemos
+                        construido con amor, con
+                        paciencia y con verdad. Hemos crecido juntos, hemos reído, soñado, llorado, caído y como siempre
+                        nos hemos vuelto a levantarnos.
+                        Pero lo más hermoso es que siempre lo hemos hecho de la mano, y eso lo es todo para mí. 🤝✨</p>
+                    <br>
+                    <p>Mi vida, no tengo palabras suficientes para agradecerle todo lo que ha sido para mí,
+                        especialmente ahora que estoy
+                        atravesando momentos duros 😔. Sé que no estoy en mi mejor versión, que mi trabajo y mis
+                        problemas económicos me han tenido
+                        preocupado, silencioso a veces, quizá hasta distante… pero usted no se ha movido. Usted se ha
+                        quedado. Usted me ha apoyado
+                        como solo lo hace alguien que ama de verdad ❤️. </p>
+                    <br>
+                    <p>Gracias por no soltarme 💗.</p>
+                    <br>
+                    <p>Gracias por no mirar mis vacíos, sino mis ganas 💘.</p>
+                    <br>
+                    <p>Gracias por ver en mí al hombre que quiere salir adelante, y no solo al que está pasando por una
+                        tormenta.</p>
+                    <br>
+                    <p>Gracias por su ternura, su paciencia y por creer en este amor incluso cuando las circunstancias
+                        no han sido las mejores. 🌧️❤️🌈</p>
+                    <br>
+                    <p>Este año no solo me ha enseñado lo que es amar a alguien… me ha enseñado lo que es ser amado de
+                        verdad. Y eso me lo ha enseñado
+                        usted, con cada gesto, con cada palabra de aliento, con cada mirada que me dice “estoy con
+                        usted”, incluso cuando el mundo parece
+                        venirse abajo. 🙏💞</p>
+                    <br>
+                    <p>Recuerdo cada momento con usted: nuestras risas cómplices 😄, nuestras caminatas 🚶‍♀️🚶‍♂️, las
+                        caricias que me calman 🤲, las
+                        conversaciones profundas 🧠, las fotos espontáneas 📸, los silencios que no incomodan 🤫.</p>
+                    <br>
+                    <p>Y también los momentos difíciles, donde el amor ha sido más fuerte que el orgullo.
+                        Porque, mi reina, lo nuestro es real. No es perfecto, pero es verdadero.
+                        Y eso vale más que cualquier cosa. 🏰🌹</p>
+                    <br>
+                    <p>Usted es mi alegría 🌞, mi refugio 🏡, mi razón de lucha ⚔️.
+                        Cuando me siento sin fuerzas, pensar en usted me impulsa a seguir.
+                        No solo porque la amo, sino porque me inspira a ser mejor. A crecer, a sanar, a levantarme una y
+                        otra vez. 🌅💪</p>
+                    <br>
+                    <p>Hoy quiero prometerle algo desde lo más profundo de mi corazón:</p>
+                    <br>
+                    <p>Voy a salir de esta.💖 Por todo lo que merecemos vivir juntos. 🌠💑</p>
+                    <br>
+                    <p>En verdad mil gracias, amor, por caminar a mi lado en las buenas… y más aún en las malas.💑 </p>
+                    <br>
+                    <p>Gracias por su lealtad, su dulzura 🍯, su forma única de amarme 💘.</p>
+                    <br>
+                    <p>Y gracias por elegirme cada día, incluso cuando yo mismo he dudado de mí. 🌻🕊️</p>
+                    <br>
+                    <p>Y aún con todo esto que le he dicho… 🌧️❤️🌈.
+                        No sé por dónde empezar.
+                    </p>
+                    <br>
+                    <p>Porque además de todo lo vivido, me quedo con lo que usted es: 🥰💘</p>
+                    <br>
+                    <p>Una mujer maravillosa, única, fuerte, dulce… simplemente, incomparable 💐❤️.
+                        Una dama con luz propia, con una belleza que no solo está en su rostro, sino en su alma.
+                        Una persona a la que admiro, respeto y amo con todo mi ser 💎✨.</p>
+                    <br>
+                    <p>Este primer año es solo el comienzo de todo lo que quiero compartir con usted:
+                        más sonrisas 😄, más metas 📝, más viajes 🧳, más abrazos en silencio 🤗, más tardes sin
+                        prisa, más vida juntos. 💑🌹</p>
+                    <br>
+                    <p>Mi amorcito, mi vida, mi preciosa, mi reina, mi cielito, mi novia, mi futura esposa,
+                        definitivamente mi todo....Le amo con el alma. 🥰💘
+                        Con respeto, con admiración, con ternura… Y con ese compromiso silencioso pero firme de estar
+                        para usted, como usted ha estado para mí 🤍🤝
+                    </p>
+                    <br>
+                    <p>Feliz Aniversario Mi Corazoncito, Nuestro primer año, mi reina 👑🥰💘.
+                        Gracias por existir y por permitirme amarle.
+                        Por más besos, más abrazos… y por muchos años más, si Diosito y la Vigencita asi lo permiten.
+                        🥂💏✨
+                    </p>
+                    <br>
+                    <p>Con todo mi corazón💘,
+                        El hombre que se siente honrado y afortunado de caminar a su lado. 💌🌺</p>
+                    <br>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fecha Aniversario</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Botón de Hamburguesa -->
+    <button id="sidebarToggle" class="hamburger-button">
+      <i class="ri-menu-4-line"></i>
+    </button>
+    <!-- Botón de cerrar Sesion -->
+    <button id="logoutButton" title="Cerra Sesion">
+      <i class="ri-logout-circle-line"></i>
+    </button>
+    <button id="toggleDarkMode" class="floating-button">
+      <i class="ri-sun-line"></i>
+    </button>
+
+    <form id="loginForm">
+      <h1 class="titulo-sesion">¡💜 Feliz Aniversario, Mi Corazon Hermosa. 💜!</h1>
+      <br>
+      <h1 class="titulo-sesion">Nuestro Tiempo Juntos:</h1>
+
+      <div class="timer-container" id="timer">
+        <!-- Aquí aparecerán los cuadros con el tiempo transcurrido -->
+      </div>
+
+      <div id="mensajeFinal" class="mensaje-final">
+        <p>Gracias por cada segundo compartido,</p>
+        <p>por sus sonrisas, sus abrazos, sus “Le Amo”.</p>
+        <p>Es mi alegría diaria, mi lugar seguro. 💖</p>
+        <p>Le amo con todo mi corazón, siempre tuyo.</p>
+      </div>
+      <div id="hearts-container" class="hidden"></div>
+      <button id="botonRedirige">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" color="#ffffff" fill="none">
+          <path
+            d="M11 3L10.3374 3.23384C7.75867 4.144 6.46928 4.59908 5.73464 5.63742C5 6.67576 5 8.0431 5 10.7778V13.2222C5 15.9569 5 17.3242 5.73464 18.3626C6.46928 19.4009 7.75867 19.856 10.3374 20.7662L11 21"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M21 12L11 12M21 12C21 11.2998 19.0057 9.99153 18.5 9.5M21 12C21 12.7002 19.0057 14.0085 18.5 14.5"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg> Siguiente Mi Cielo Hermosa💜
+      </button>
+      </button>
+    </form>
+
+  </div>
+
+  <div id="modalError" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/driver.js/dist/driver.js.iife.js"></script>
+  <script src="script/script.js"></script>
+</body>
+
+</html>
